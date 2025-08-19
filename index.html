@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Fruit Basket Story</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Fruits Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="grid-container">
-        <header>
-            <h1>Fruit Basket Adventure</h1>
-        </header>
-
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Story</a></li>
-                <li><a href="#">Fruits</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-
-        <main>
-            <h2>The Summer Basket</h2>
-            <img src="basket with fruits.jpeg" alt="Basket with fruits" class="fruit-img">
-            <p>The basket was full of fruits and the kids were excited to share them. 
-               Each fruit had its own story, color, and taste that made summer special.</p>
-
-            <h3>Fruits from the Basket</h3>
-
-            <!-- Fruit List --> 
-            <ul> 
-                <li>🍎 Apples</li> 
-                <li>🍌 Bananas</li> 
-                <li>🍊 Oranges</li> <li>🍇 Grapes</li> 
-                <li>🍉 Watermelon</li> <li>🍍 Pineapple</li> 
-                <li>🍓 Strawberries</li> 
-            </ul>
-            
-        </main>
-
-        <!-- Sidebar with story instead of fun facts -->
-        <aside>
-            <h3>Fruit Story</h3>
-            <p>Once upon a sunny day, the children found a big basket filled with colorful fruits. 
-               They decided to share them with friends and neighbors, spreading joy and sweetness all around.</p>
-        </aside>
-
-        <footer>
-            <p>&copy; 2025 All rights reserved.</p>
-        </footer>
-    </div>
+  <div class="grid-container">
+    
+    <!-- Header -->
+    <header class="header">
+      <h1>Welcome to the Fruits World</h1>
+    </header>
+    
+    <!-- Navigation using Flexbox -->
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Fruits</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Fruit List</h2>
+      <ul>
+        <li>🍎 Apples</li>
+        <li>🍌 Bananas</li>
+        <li>🍊 Oranges</li>
+        <li>🍇 Grapes</li>
+        <li>🍉 Watermelon</li>
+        <li>🍍 Pineapple</li>
+        <li>🍓 Strawberries</li>
+      </ul>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main">
+      <h2>A Short Story</h2>
+      <p>
+        Once upon a sunny summer morning, a basket full of fruits 
+        was placed under a tree. The children gathered around, 
+        their eyes sparkling with excitement.
+      </p>
+      <p>
+        Each fruit told a story — apples of health, bananas of 
+        energy, and grapes of sweetness. Together, they reminded 
+        everyone that nature gives us colorful gifts to keep us 
+        happy and strong.
+      </p>
+      <img src="basket with fruits.jpeg" alt="Basket of fruits" class="fruit-image">
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Fruits World. All rights reserved.</p>
+    </footer>
+    
+  </div>
 </body>
 </html>

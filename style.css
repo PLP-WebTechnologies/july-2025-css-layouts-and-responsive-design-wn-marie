@@ -1,115 +1,161 @@
-/* General Reset */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fdfdfd;
+  color: #333;
 }
 
-/* Grid Container for Main Layout */
+/* Full page grid layout */
 .grid-container {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "nav nav"
-        "main aside"
-        "footer footer";
-    grid-template-columns: 2fr 1fr;
-    gap: 15px;
-    min-height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px 1fr 80px;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Grid Sections */
-header {
-    grid-area: header;
-    background: darkorange;
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* Areas */
+.header { 
+  grid-area: header; 
+  background: #4CAF50; 
+  color: white; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
-nav {
-    grid-area: nav;
-    background: #333;
-    padding: 10px;
+.nav { 
+  grid-area: nav; 
+  background: #333; 
 }
 
-/* Flexbox for Navigation Links */
-.nav-links {
-    list-style: none;
-    display: flex;              /* Flexbox */
-    justify-content: center;    /* Center horizontally */
-    margin: 0;
-    padding: 0;
-}
-.nav-links li {
-    margin: 0 15px;
-}
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: yellow;
+/* Flexbox for nav links */
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-main {
-    grid-area: main;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 8px;
+.nav ul li {
+  margin: 10px 0;
 }
 
-aside {
-    grid-area: aside;
-    background: #f0f0f0;
-    padding: 15px;
-    border-radius: 8px;
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
 }
 
-footer {
-    grid-area: footer;
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.nav ul li a:hover {
+  background: #4CAF50;
+  border-radius: 5px;
 }
 
-/* Fruit Image */
-.fruit-img {
-    float: right;
-    width: 200px; 
-    margin: 0 0 10px 15px;
-    border-radius: 8px;
+.sidebar {
+  display: none;  /* optional, if you want to add later */
 }
 
+.main { 
+  grid-area: main; 
+  background: #fff; 
+  padding: 20px; 
+  overflow-y: auto;
+}
+
+.fruit-image {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 15px;
+  border-radius: 10px;
+  display: block;
+}
+
+.footer { 
+  grid-area: footer; 
+  background: #333; 
+  color: white; 
+  text-align: center; 
+  padding: 15px; 
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .grid-container {
-        grid-template-areas:
-            "header"
-            "nav"
-            "main"
-            "aside"
-            "footer";
-        grid-template-columns: 1fr;
-    }
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+    width: 100%; /* fluid container */
+  }
 
-    /* Navigation links stack vertically on mobile */
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-links li {
-        margin: 10px 0;
-    }
+  .nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
 
-    /* Image adjusts */
-    .fruit-img {
-        float: none;
-        display: block;
-        margin: 10px auto;
-        width: 100%;
-        max-width: 250px;
-    }
+  .nav ul li {
+    margin: 0 10px;
+  }
+}
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+    width: 100%;
+    height: auto; /* Allow page height to grow naturally */
+  }
+
+  .header {
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .nav ul {
+    flex-direction: column; /* stack again for small screens */
+    padding: 10px;
+  }
+
+  .nav ul li {
+    margin: 8px 0;
+  }
+
+  .main {
+    padding: 15px;
+    font-size: 0.95rem; /* slightly smaller text */
+  }
+
+  .fruit-image {
+    max-width: 100%; /* full width on mobile */
+    height: auto;
+    margin: 10px auto;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
 }
